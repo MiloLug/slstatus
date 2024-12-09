@@ -37,7 +37,7 @@ static const char unknown_str[] = "n/a";
  * kernel_release      `uname -r`                      NULL
  * keyboard_indicators caps/num lock indicators        format string (c?n?)
  *                                                     see keyboard_indicators.c
- * keymap              layout (variant) of current     NULL
+ * keymap              layout (variant) of current     full or short (f)
  *                     keymap
  * load_avg            load average                    NULL
  * netspeed_rx         receive network speed           interface name (wlan0)
@@ -69,7 +69,7 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function     format              argument */
 	{ datetime,     "%s",               "%a %d-%m(%b)-%y %T" },
-	{ keymap,       " | %s",            NULL    },
+	{ keymap,       " | %s",            "s"    },
 	{ battery_perc, " | %s%%",          "BAT1"  },
 	{ run_command,  " %s",              DE_CONTROL "/battery charging && echo 🔌 || echo 🔋"},
 };
